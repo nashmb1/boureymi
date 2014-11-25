@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+C:\Users\Nashmb\Documents\PROGRAMMATION\workspace\ECOMMERCE3\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3538797238.index
+3198691465.index
+2164677692.index
+3035089272.index
+2922936252.index
+228503227.index
+1989705754.index

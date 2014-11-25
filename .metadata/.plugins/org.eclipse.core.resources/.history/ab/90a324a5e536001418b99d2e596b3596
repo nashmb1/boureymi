@@ -1,0 +1,69 @@
+package com.eni.dvtejb.web;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.logging.Logger;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.eni.dvtejb.metier.entities.Article;
+import com.eni.dvtejb.metier.entities.Client;
+import com.eni.dvtejb.metier.entities.Commande;
+import com.eni.dvtejb.metier.sessions.PanierBeanRemote;
+
+/**
+ * Servlet implementation class TestServlet
+ */
+@WebServlet("/TestServlet")
+public class TestServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	private static Logger logger = Logger.getLogger(TestServlet.class.getName());
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response)
+					throws ServletException, IOException {
+		try {
+			InitialContext initialContext = new InitialContext();
+			//lookup("ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!" + viewClassName + "?stateful");			
+			PanierBeanRemote panier = (PanierBeanRemote) initialContext.lookup("ejb:VenteEnLigne/VenteEnLigneEJB/PanierBean!"+PanierBeanRemote.class.getName()+"?stateful");
+			logger.info ("-->> lookup effectué");
+			logger.info (" ----------- Debut -----------");
+			Article article1 = new Article();
+			article1.setNom("gants");
+			article1.setPrix(22);
+			Article article2 = new Article();
+			article2.setNom("chaussures");
+			article2.setPrix(44);
+			Article[] listArticles = new Article[2];
+			listArticles[0] = article1;
+			listArticles[1] = article2;
+			Client client = new Client();
+			client.setEmail("client1@super.com");
+			BigDecimal fax = new BigDecimal("1115333");
+			client.setFax(fax);
+			client.setLogin("azerty");
+			client.setPassword("qwerty");
+			client.setNom("Dabet");
+			client.setPrenom("Jean");
+			BigDecimal telephone = new BigDecimal("4567899");
+			client.setTelephone(telephone);
+			client.setTitre("Mr");
+			Commande commande = panier. genererCommande
+					(listArticles, client, new BigDecimal[]{new BigDecimal("3"), new
+							BigDecimal("5")});
+			System.out.println("ID commande:"+commande.getCommandeid());
+			logger.info (commande.getUtilisateur().getNom());
+			logger.info (commande.getUtilisateur().getPrenom());
+			logger.info (" ----------- Fin -----------");
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

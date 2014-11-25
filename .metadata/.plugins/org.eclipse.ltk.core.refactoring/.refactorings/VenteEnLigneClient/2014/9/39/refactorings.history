@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;env&apos; in &apos;com.eni.dvtejb.client.MailConfirmationProducteur.main(...)&apos; to &apos;properties&apos;&#x0D;&#x0A;- Original project: &apos;VenteEnLigneClient&apos;&#x0D;&#x0A;- Original element: &apos;com.eni.dvtejb.client.MailConfirmationProducteur.main(String[]).env&apos;&#x0D;&#x0A;- Renamed element: &apos;env&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;env&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/appClientModule&lt;com.eni.dvtejb.client{MailConfirmationProducteur.java[MailConfirmationProducteur~main~\[QString;@env!1007!2395!2373!2375!QProperties;!67108880!false" name="properties" references="true" stamp="1411556808998" version="1.0"/>
+</session>

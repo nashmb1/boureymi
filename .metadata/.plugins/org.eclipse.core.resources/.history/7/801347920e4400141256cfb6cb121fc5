@@ -1,0 +1,6 @@
+
+package com.eni.dvtejb.metier.mdb;
+
+public final class MailConfirmationMdbBean {
+
+}

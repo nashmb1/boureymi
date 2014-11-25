@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="VenteEnLigne">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="VenteEnLigneWeb.war" deploy-path="/" handle="module:/resource/VenteEnLigneWeb/VenteEnLigneWeb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="VenteEnLigneEJB.jar" deploy-path="/" handle="module:/resource/VenteEnLigneEJB/VenteEnLigneEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="VenteEnLigneClient.jar" deploy-path="/" handle="module:/resource/VenteEnLigneClient/VenteEnLigneClient">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="VenteEnLigneWebStruts2.war" deploy-path="/" handle="module:/resource/VenteEnLigneWebStruts2/VenteEnLigneWebStruts2">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
